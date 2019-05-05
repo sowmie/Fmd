@@ -6,5 +6,9 @@ public class NewAdd{
 		return null;
 	}
 
+	public void testMethod10(){
+		return null;
+	}
+
 }
 

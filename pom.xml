@@ -8,18 +8,31 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <name>Sowmya POM 1</name
-
     <organization>
         <name>Sowmya/name>
     </organization>
-
     <modules>
         <module>SRFmd</module>
     </modules>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
         <main.basedir>${basedir}</main.basedir>
     </properties>
+             <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <warSourceDirectory>${project.basedir}</warSourceDirectory>
+                    <webResources>
+                        <resource>
+                            <!-- this is relative to the pom.xml directory -->
+                            <directory>${project.basedir}/../SRTest/target/</directory>
+                            <targetPath>s2</targetPath>
+                        </resource>
+                    </webResources>
+                </configuration>
+             </plugin>  
+             </plugins>
 </project>
